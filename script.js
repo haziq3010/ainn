@@ -117,9 +117,7 @@ document.querySelector('#cake-container').after(resetBtn);
         
             const playlist = [
             { title: "July - Noah", src: "july.mp3", duration: "3:45" },
-            { title: "Dandelions - Ruth B.", src: "dandelions.mp3", duration: "3:54" },
-            { title: "Daisy - Wave to Earth", src: "daisy.mp3", duration: "3:14" },
-            { title: "Blue Salvia - Pryvt", src: "blue-salvia.mp3", duration: "2:48" }
+            { title: "Dandelions - Ruth B.", src: "dandelions.mp3", duration: "3:54" }
         ];
         
         const itemsPerPage = 3;
