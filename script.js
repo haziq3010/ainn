@@ -196,5 +196,8 @@ document.querySelector('#cake-container').after(resetBtn);
             });
         });
 
-    
+        window.addEventListener('load', function() {
+            // Trigger click on the play button to start playing when the page loads
+            playBtn.click();
+        });
         
