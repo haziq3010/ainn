@@ -78,41 +78,6 @@ document.querySelector('#cake-container').after(resetBtn);
             duration: 1000,
             once: true
         });
-       
-        
-        
-            // Play the audio when the modal is shown
-            document.addEventListener("DOMContentLoaded", function () {
-                const audio = document.getElementById("birthday-song");
-                const modal = document.getElementById("birthdayWishModal");
-        
-                // Add an event listener to play the song when the modal is shown
-                modal.addEventListener("shown.bs.modal", function () {
-                    audio.play().catch(error => {
-                        console.log("Audio play was blocked:", error);
-                    });
-                });
-        
-                // Optional: Add a "play music" button in case autoplay fails
-                audio.play().catch(() => {
-                    const btn = document.createElement('button');
-                    btn.textContent = "Play Music";
-                    btn.style.display = "none";
-                    btn.style.position = "fixed";
-                    btn.style.top = "50%";
-                    btn.style.left = "50%";
-                    btn.style.transform = "translate(-50%, -50%)";
-                    btn.style.padding = "1rem 2rem";
-                    btn.style.background = "#f8f9fa";
-                    btn.style.border = "1px solid #ddd";
-                    btn.style.cursor = "pointer";
-                    document.body.appendChild(btn);
-                    btn.addEventListener("click", () => {
-                        audio.play();
-                        document.body.removeChild(btn);
-                    });
-                });
-            });
         
         
             const playlist = [
@@ -230,3 +195,6 @@ document.querySelector('#cake-container').after(resetBtn);
                 loadTrack();
             });
         });
+
+    
+        
