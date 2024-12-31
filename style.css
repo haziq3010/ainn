@@ -1,0 +1,323 @@
+:root {
+    --primary-color: #ffecf0; /* Soft pink */
+    --accent-color: #ffffff; /* White for gradient */
+    --text-color: #4a5568; /* Neutral text color */
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+    color: var(--text-color);
+    margin: 0;
+    
+}
+
+#fun-facts {
+    background: linear-gradient(to bottom, var(--accent-color), var(--primary-color));
+    color: var(--text-color);
+}
+
+#fun-facts .card {
+    background-color: white;
+    border-radius: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#fun-facts .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 500;
+}
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+}
+
+.hero-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffffff 0%, var(--primary-color) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.btn-custom {
+    background-color: white;
+    border: 1px solid #e2e8f0;
+    color: var(--text-color);
+    padding: 0.75rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.btn-custom:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.dandelion-seed {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.6;
+    animation: float 15s infinite linear;
+}
+
+@keyframes float {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    100% {
+        transform: translate(300px, -300px) rotate(360deg);
+    }
+}
+
+.lottie-animation {
+    width: 100%;
+    height: 100%;
+    max-width: 600px;
+    max-height: 400px;
+    animation: lottieScale 1s ease-in-out forwards;
+}
+
+@keyframes lottieScale {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Custom Modal Design */
+.modal-content {
+    background: linear-gradient(135deg, #ffffff 0%, var(--primary-color) 60%);
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding: 2rem;
+    transform: scale(0.9);
+    animation: modalIn 0.3s ease-out forwards;
+}
+
+@keyframes modalIn {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    border-bottom: none;
+    padding-bottom: 1rem;
+}
+
+.modal-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+}
+
+.lottie-animation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.wish-text {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#wishes{
+    background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+}
+
+
+.modal-footer {
+    border-top: none;
+    justify-content: center;
+    padding-top: 1.5rem;
+}
+
+.btn-close {
+    background-color: var(--primary-color);
+    border: 1px solid #e2e8f0;
+    color: var(--text-color);
+    border-radius: 50%;
+}
+
+.btn-close:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.1);
+}
+
+.btn-custom {
+    background-color: var(--primary-color);
+    border: 1px solid #e2e8f0;
+    color: var(--text-color);
+}
+
+.btn-custom:hover {
+    background-color: var(--accent-color);
+    transform: scale(1.05);
+}
+
+.cake {
+    position: relative;
+    width: 250px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.cake-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: #ff9eaa;
+    border-radius: 10px;
+}
+
+.music-section {
+    background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+}
+
+.cake-section{
+    background: linear-gradient(to bottom, var(--accent-color), var(--primary-color) );
+}
+.cake-middle {
+    position: absolute;
+    bottom: 100px;
+    width: 90%;
+    height: 60px;
+    left: 5%;
+    background: #ffd6dc;
+    border-radius: 10px;
+}
+
+.cake-top {
+    position: absolute;
+    bottom: 160px;
+    width: 80%;
+    height: 40px;
+    left: 10%;
+    background: #ffecf0;
+    border-radius: 10px;
+}
+
+.candles {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.candle {
+    width: 20px;
+    height: 60px;
+    background: linear-gradient(#fff, #ffd6dc);
+    position: relative;
+    border-radius: 5px;
+}
+
+.flame {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 30px;
+    background: #ffd700;
+    border-radius: 50% 50% 20% 20%;
+    animation: flicker 0.3s infinite alternate;
+    transition: opacity 0.3s ease;
+}
+
+@keyframes flicker {
+    0% { transform: translateX(-50%) scale(1); }
+    100% { transform: translateX(-50%) scale(1.1); }
+}
+
+.flame.blown {
+    opacity: 0;
+}
+
+/* Confetti styles will be added via canvas */
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.social-links .btn-floating {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-links .btn-floating:hover {
+    transform: translateY(-3px);
+    background-color: var(--text-color);
+    color: white;
+}
+
+.footer-links a {
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color) !important;
+}
