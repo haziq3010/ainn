@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Ain's Birthday Celebration</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #fef6e4;
+            --accent-color: #ffde9e;
+            --text-color: #4a5568;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            overflow: hidden;
+        }
+
+        .hero-section {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 700;
+            color: #4a5568;
+            font-size: 3rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #6c757d;
+            margin-bottom: 2rem;
+        }
+
+        .btn-custom {
+            background-color: #fff;
+            color: var(--text-color);
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            border: 2px solid var(--text-color);
+            text-transform: uppercase;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: var(--text-color);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .dandelion-seed {
+            position: absolute;
+            pointer-events: none;
+            animation: float 15s infinite linear;
+            font-size: 1.5rem;
+            opacity: 0.6;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            100% {
+                transform: translate(300px, -300px) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero-section">
+        <div>
+            <h1 class="hero-title">Welcome to Ain's Birthday Celebration! 🎉</h1>
+            <p class="hero-subtitle">Join us in celebrating this special day filled with joy, love, and surprises.</p>
+            <a href="birthday.html" class="btn btn-custom">Enter the Party 🎂</a>
+        </div>
+    </section>
+
+    <!-- Dandelion Seeds -->
+    <script>
+        function createDandelionSeed() {
+            const seed = document.createElement('div');
+            seed.className = 'dandelion-seed';
+            seed.innerHTML = '🌼';
+            seed.style.left = Math.random() * window.innerWidth + 'px';
+            seed.style.top = Math.random() * window.innerHeight + 'px';
+            seed.style.fontSize = (Math.random() * 10 + 20) + 'px';
+            seed.style.animationDuration = (Math.random() * 10 + 10) + 's';
+            document.body.appendChild(seed);
+
+            setTimeout(() => seed.remove(), 15000);
+        }
+
+        // Generate multiple dandelion seeds
+        for (let i = 0; i < 20; i++) {
+            setTimeout(createDandelionSeed, i * 500);
+        }
+
+        // Continuously create seeds every 3 seconds
+        setInterval(() => createDandelionSeed(), 3000);
+    </script>
+
+    <!-- Background Music -->
+    <audio id="background-music" loop autoplay>
+        <source src="background-music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        const music = document.getElementById('background-music');
+        music.volume = 0.1; // Adjust volume for a subtle ambiance
+    </script>
+</body>
+</html>
