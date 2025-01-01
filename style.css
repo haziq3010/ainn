@@ -1,7 +1,10 @@
 :root {
-    --primary-color: #ffecf0; /* Soft pink */
-    --accent-color: #ffffff; /* White for gradient */
-    --text-color: #4a5568; /* Neutral text color */
+    --primary-color: #ffecf0;
+    /* Soft pink */
+    --accent-color: #ffffff;
+    /* White for gradient */
+    --text-color: #4a5568;
+    /* Neutral text color */
 }
 
 body {
@@ -9,7 +12,7 @@ body {
     background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
     color: var(--text-color);
     margin: 0;
-    
+
 }
 
 #fun-facts {
@@ -28,7 +31,12 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Cormorant Garamond', serif;
     font-weight: 500;
 }
@@ -108,6 +116,7 @@ h1, h2, h3, h4, h5, h6 {
         transform: scale(0.5);
         opacity: 0;
     }
+
     100% {
         transform: scale(1);
         opacity: 1;
@@ -130,6 +139,7 @@ h1, h2, h3, h4, h5, h6 {
         transform: scale(0.9);
         opacity: 0;
     }
+
     100% {
         transform: scale(1);
         opacity: 1;
@@ -171,7 +181,7 @@ h1, h2, h3, h4, h5, h6 {
     margin-top: 1rem;
 }
 
-#wishes{
+#wishes {
     background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
 }
 
@@ -225,9 +235,10 @@ h1, h2, h3, h4, h5, h6 {
     background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
 }
 
-.cake-section{
-    background: linear-gradient(to bottom, var(--accent-color), var(--primary-color) );
+.cake-section {
+    background: linear-gradient(to bottom, var(--accent-color), var(--primary-color));
 }
+
 .cake-middle {
     position: absolute;
     bottom: 100px;
@@ -279,8 +290,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @keyframes flicker {
-    0% { transform: translateX(-50%) scale(1); }
-    100% { transform: translateX(-50%) scale(1.1); }
+    0% {
+        transform: translateX(-50%) scale(1);
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1.1);
+    }
 }
 
 .flame.blown {
@@ -321,3 +337,161 @@ h1, h2, h3, h4, h5, h6 {
 .footer-links a:hover {
     color: var(--primary-color) !important;
 }
+
+/* Gallery Section */
+#gallery-section {
+    background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+    
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+#gallery-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Spelling Section */
+#sayang-section {
+    background: linear-gradient(to bottom, var(--accent-color), var(--primary-color));
+    padding: 50px 0;
+}
+
+.sayang-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.letter {
+    width: 80px;
+    height: 80px;
+}
+
+h2.section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 40px;
+}
+
+img.rounded-circle {
+    width: 150px; /* Ensure width and height are equal */
+    height: 150px; /* Ensure width and height are equal */
+    object-fit: cover; /* Ensures the image fits perfectly in the circle */
+    border-radius: 50%; /* Makes the image round */
+}
+
+/* SlideShow */
+#slideshow-container {
+    position: relative;
+    width: 400px; /* Fixed width */
+    height: 300px; /* Fixed height */
+    overflow: visible; /* Allow images to extend outside the container */
+    border-radius: 15px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide {
+    position: absolute;
+    width: 70%; /* Size of the active image */
+    height: 100%;
+    opacity: 0.5; /* Default reduced opacity */
+    transition: all 0.5s ease; /* Smooth transition */
+    transform-origin: center center; /* Center the scale transformation */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.slide.active {
+    opacity: 1; /* Full opacity for active slide */
+    transform: translateX(0) scale(1); /* Center the active slide */
+    z-index: 10; /* Bring to the front */
+}
+
+.slide.left {
+    opacity: 0.5; /* Reduced opacity for side slides */
+    transform: translateX(-150%) scale(0.8); /* Position on the left */
+    z-index: 5;
+}
+
+.slide.right {
+    opacity: 0.5; /* Reduced opacity for side slides */
+    transform: translateX(150%) scale(0.8); /* Position on the right */
+    z-index: 5;
+}
+/* 
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    user-select: none;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.fade {
+    animation: fadeEffect 1.5s;
+}
+
+@keyframes fadeEffect {
+    from { opacity: 0.4; }
+    to { opacity: 1; }
+} */

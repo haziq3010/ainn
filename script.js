@@ -81,8 +81,8 @@ document.querySelector('#cake-container').after(resetBtn);
         
         
             const playlist = [
-            { title: "July - Noah", src: "july.mp3", duration: "3:45" },
-            { title: "Dandelions - Ruth B.", src: "dandelions.mp3", duration: "3:54" }
+            { title: "Andmesh - Anugerah Terindah", src: "Terindah.mp3", duration: "1:31" },
+            { title: "ABADI - Dendi Nata", src: "Abadi.mp3", duration: "4:03" }
         ];
         
         const itemsPerPage = 3;
@@ -177,6 +177,35 @@ document.querySelector('#cake-container').after(resetBtn);
                 }
             });
         }
+
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function updateSlides() {
+            slides.forEach((slide, index) => {
+                slide.classList.remove('active', 'left', 'right');
+
+                if (index === currentSlideIndex) {
+                    slide.classList.add('active');
+                } else if (index === (currentSlideIndex - 1 + slides.length) % slides.length) {
+                    slide.classList.add('left');
+                } else if (index === (currentSlideIndex + 1) % slides.length) {
+                    slide.classList.add('right');
+                }
+            });
+        }
+
+        function startSlideshow() {
+            setInterval(() => {
+                currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+                updateSlides();
+            }, 2500); // Change slide every 1 second
+        }
+
+        // Initialize the slideshow
+        updateSlides();
+        startSlideshow();
+
         
         audio.addEventListener('timeupdate', () => {
             const percentage = (audio.currentTime / audio.duration) * 100;
@@ -198,6 +227,14 @@ document.querySelector('#cake-container').after(resetBtn);
 
         window.addEventListener('load', function() {
             // Trigger click on the play button to start playing when the page loads
-            playBtn.click();
+            playBtn.addEventListener('click', togglePlay);
+        });
+
+        window.addEventListener('load', function() {
+            // Automatically play the song when the page is loaded
+            const audio = document.getElementById("birthday-song");
+            if (audio) {
+                audio.play();
+            }
         });
         
